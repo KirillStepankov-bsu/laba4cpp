@@ -1,6 +1,8 @@
 #include <iostream>
+#include "main.h"
 #include <conio.h>
 #include <vector>
+#include "test.cpp"
 
 using namespace std;
 
@@ -10,7 +12,6 @@ int SizeOfArray(const char *array) {
     int size = 0;
     for (int i = 0; *array; array++, i++)
         size++;
-
     return size;
 }
 
@@ -36,7 +37,6 @@ bool ConsistOfDigits(const vector<char> &word) {
         if (i < '0' || i > '9')
             return false;
     }
-
     return true;
 }
 
@@ -57,36 +57,31 @@ void partB(const vector<char> &word, vector<char> &palindrom, int &palindrom_amo
     palindrom.clear();
     for (int i = 0; i < word.size(); i++)
         palindrom.push_back(word[i]);
-
 }
 
 void PrintVector(const vector<char> &array) {
     for (auto i: array)
         cout << i;
     cout << endl;
-
 }
 
 vector<char> FindPalindromInString(vector<char>& word){
     vector<char> palindrom;
     int palindrom_amount = 0;
 
-    char ch = getch();
+    char ch = getche();
     word.push_back(ch);
     while (ch != '\r') {
-        ch = getch();
+        ch = getche();
         if (ch == ' ' || ch == '\r') {
             partB(word, palindrom, palindrom_amount);
-
             if (palindrom_amount == 2)
                 break;
-
             word.clear();
         } else {
             word.push_back(ch);
         }
     }
-
     return palindrom;
 }
 
@@ -94,6 +89,5 @@ int main() {
     vector<char> word;
     vector<char> palindrom = FindPalindromInString(word);
     PrintVector(palindrom);
+    Testing();
 }
-
-
