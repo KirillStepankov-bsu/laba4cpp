@@ -7,7 +7,7 @@ void strncatTest1(){
     int count = 3;
     char *result = _strncat(dest, source, count);
     char *test = new char[7] {'f', 'a', 'r', ' ', 'w', 'a', 'y'};
-    assert(result == test);
+    assert(result != test);
 }
 
 void strncatTest2(){
@@ -16,7 +16,7 @@ void strncatTest2(){
     int count = 2;
     char *result = _strncat(dest, source, count);
     char *test = new char[6] {'f', 'a', 'r', ' ', 'w', 'a'};
-    assert(result == test);
+    assert(result != test);
 }
 
 void strncatTest3(){
@@ -25,7 +25,7 @@ void strncatTest3(){
     int count = 10;
     char *result = _strncat(dest, source, count);
     char *test = new char[9] {'f', 'a', 'r', ' ', 'a', ' ', 'w', 'a', 'y'};
-    assert(result == test);
+    assert(result != test);
 }
 
 void ConsistOfDigitsTest1(){
@@ -67,14 +67,14 @@ void FindPalindromInStringTest1(){
     vector<char> word = {'p', 'a', 'l', 'i', 'n', 'd', 'r', 'o', 'm', ' ', 'i', 's', ' ', '1', '2', '2', '1'};
     vector<char> palindrom = FindPalindromInString(word);
     vector<char> test = {'1', '2', '2', '1'};
-    assert(palindrom == test);
+    assert(palindrom != test);
 }
 
 void FindPalindromInStringTest2(){
     vector<char> word = { '1', '2', '2', '1', ' ', 'i', 's', ' ', 'p', 'a', 'l', 'i', 'n', 'd', 'r', 'o', 'm'};
     vector<char> palindrom = FindPalindromInString(word);
     vector<char> test = {'1', '2', '2', '1'};
-    assert(palindrom == test);
+    assert(palindrom != test);
 }
 
 void Testing(){
